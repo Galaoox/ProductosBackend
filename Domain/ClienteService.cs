@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Services.Models;
 using Data.Models;
 using Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -31,12 +29,12 @@ namespace Services
 
         public async Task UpdateClient(int id, Cliente client)
         {
-            var clientFounded = await FindClient(id);
-            clientFounded.Telefono = client.Telefono;
-            clientFounded.Cedula = client.Cedula;
-            clientFounded.Nombre = client.Nombre;
-            clientFounded.Apellido = client.Apellido;
-            _dbContext.Update(clientFounded);
+            var clientFound = await FindClient(id);
+            clientFound.Telefono = client.Telefono;
+            clientFound.Cedula = client.Cedula;
+            clientFound.Nombre = client.Nombre;
+            clientFound.Apellido = client.Apellido;
+            _dbContext.Update(clientFound);
             await _dbContext.SaveChangesAsync();
         }
 
@@ -56,9 +54,9 @@ namespace Services
 
         private async Task<Cliente> FindClient(int id)
         {
-            var clientFounded = await _dbContext.Clientes.FirstOrDefaultAsync(c => c.Id == id && c.Disabled != 1);
-            if (clientFounded == null) throw new Exception("No se encontro el cliente");
-            return clientFounded;
+            var clientFound = await _dbContext.Clientes.FirstOrDefaultAsync(c => c.Id == id && c.Disabled != 1);
+            if (clientFound == null) throw new Exception("No se encontro el cliente");
+            return clientFound;
         }
     }
 }

@@ -31,6 +31,7 @@ namespace ProductosBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IClienteService, ClienteService>();
+            services.AddTransient<IProductoService, ProductoService>();
 
             services.AddControllers();
             services.AddDbContext<ProductosDBContext>(options =>
