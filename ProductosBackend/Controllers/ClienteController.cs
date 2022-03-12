@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Data.Models;
+using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
-using Data.Models;
+using System;
+using System.Threading.Tasks;
 
 
 namespace ProductosBackend.Controllers
@@ -25,7 +24,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                var result = await _clientService.ListClients();
+                var result = await _clientService.ListClientes();
                 return Ok(new
                 {
                     Data = result,
@@ -43,7 +42,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                var result = await _clientService.GetClient(id);
+                var result = await _clientService.GetCliente(id);
                 return Ok(new
                 {
                     Data = result,
@@ -61,7 +60,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                await _clientService.CreateClient(client);
+                await _clientService.CreateCliente(client);
                 return Ok();
             }
             catch (Exception ex)
@@ -76,7 +75,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                await _clientService.UpdateClient(id, client);
+                await _clientService.UpdateCliente(id, client);
                 return Ok();
             }
             catch (Exception ex)
@@ -91,7 +90,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                await _clientService.DeleteClient(id);
+                await _clientService.DeleteCliente(id);
                 return Ok();
             }
             catch (Exception ex)

@@ -1,35 +1,35 @@
-﻿using System;
+﻿using Data.Models;
+using Microsoft.EntityFrameworkCore;
+using Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Data.Models;
-using Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace Services
 {
-    public  class ClienteService: IClienteService
+    public class ClienteService : IClienteService
     {
-        private  readonly ProductosDBContext _dbContext;
+        private readonly ProductosDBContext _dbContext;
 
-       public ClienteService(ProductosDBContext dbContext)
+        public ClienteService(ProductosDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-       public async Task<List<Cliente>> ListClients()
+        public async Task<List<Cliente>> ListClientes()
         {
             return await _dbContext.Clientes.Where(x => x.Disabled != 1).ToListAsync();
         }
 
-        public async Task<Cliente> GetClient(int id)
+        public async Task<Cliente> GetCliente(int id)
         {
-            return await FindClient(id);
+            return await FindCliente(id);
         }
 
-        public async Task UpdateClient(int id, Cliente client)
+        public async Task UpdateCliente(int id, Cliente client)
         {
-            var clientFound = await FindClient(id);
+            var clientFound = await FindCliente(id);
             clientFound.Telefono = client.Telefono;
             clientFound.Cedula = client.Cedula;
             clientFound.Nombre = client.Nombre;
@@ -38,21 +38,21 @@ namespace Services
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task CreateClient(Cliente client)
+        public async Task CreateCliente(Cliente client)
         {
             _dbContext.Add(client);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteClient(int id)
+        public async Task DeleteCliente(int id)
         {
-            var clientFounded = await FindClient(id);
+            var clientFounded = await FindCliente(id);
             clientFounded.Disabled = 1;
             _dbContext.Update(clientFounded);
             await _dbContext.SaveChangesAsync();
         }
 
-        private async Task<Cliente> FindClient(int id)
+        private async Task<Cliente> FindCliente(int id)
         {
             var clientFound = await _dbContext.Clientes.FirstOrDefaultAsync(c => c.Id == id && c.Disabled != 1);
             if (clientFound == null) throw new Exception("No se encontro el cliente");

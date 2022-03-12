@@ -1,22 +1,19 @@
-﻿using System;
+﻿using Data.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Data.Models;
 
 namespace Services.Interfaces
 {
     public interface IProductoService
     {
-        public Task<List<Producto>> ListProducts();
+        public Task<List<Producto>> ListProductos();
 
-        public Task<Producto> GetProduct(int id);
+        public Task<Producto> GetProducto(int id);
 
-        public Task UpdateProduct(int id, Producto product);
+        public Task UpdateProducto(int id, Producto producto);
 
-        public Task CreateProduct(Producto product);
+        public Task CreateProducto(Producto producto);
 
-        public Task DeleteProduct(int id);
+        public Task DeleteProducto(int id);
     }
 }

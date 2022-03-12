@@ -6,14 +6,14 @@ namespace Services.Interfaces
 {
     public interface IClienteService
     {
-        public Task<List<Cliente>> ListClients();
+        public Task<List<Cliente>> ListClientes();
 
-        public Task<Cliente> GetClient(int id);
+        public Task<Cliente> GetCliente(int id);
 
-        public Task UpdateClient(int id, Cliente client);
+        public Task UpdateCliente(int id, Cliente cliente);
 
-        public Task CreateClient(Cliente client);
+        public Task CreateCliente(Cliente cliente);
 
-        public Task DeleteClient(int id);
+        public Task DeleteCliente(int id);
     }
 }

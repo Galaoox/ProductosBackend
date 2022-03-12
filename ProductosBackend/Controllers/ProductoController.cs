@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,7 +25,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                var result = await _productoService.ListProducts();
+                var result = await _productoService.ListProductos();
                 return Ok(new
                 {
                     Data = result,
@@ -44,7 +43,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                var result = await _productoService.GetProduct(id);
+                var result = await _productoService.GetProducto(id);
                 return Ok(new
                 {
                     Data = result,
@@ -62,7 +61,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                await _productoService.CreateProduct(product);
+                await _productoService.CreateProducto(product);
                 return Ok();
             }
             catch (Exception ex)
@@ -77,7 +76,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                await _productoService.UpdateProduct(id, product);
+                await _productoService.UpdateProducto(id, product);
                 return Ok();
             }
             catch (Exception ex)
@@ -92,7 +91,7 @@ namespace ProductosBackend.Controllers
         {
             try
             {
-                await _productoService.DeleteProduct(id);
+                await _productoService.DeleteProducto(id);
                 return Ok();
             }
             catch (Exception ex)
