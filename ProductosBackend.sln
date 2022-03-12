@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "ProductosBackend\Api.csproj", "{3FCF361F-880D-4299-A5D9-01136BF9A541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{0AE5B65D-71D9-4579-AEBD-3E69BCF07E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Domain\Services.csproj", "{38F26DB9-C687-408B-BB55-1C056323F29F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FCF361F-880D-4299-A5D9-01136BF9A541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FCF361F-880D-4299-A5D9-01136BF9A541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FCF361F-880D-4299-A5D9-01136BF9A541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FCF361F-880D-4299-A5D9-01136BF9A541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE5B65D-71D9-4579-AEBD-3E69BCF07E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE5B65D-71D9-4579-AEBD-3E69BCF07E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE5B65D-71D9-4579-AEBD-3E69BCF07E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE5B65D-71D9-4579-AEBD-3E69BCF07E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F26DB9-C687-408B-BB55-1C056323F29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F26DB9-C687-408B-BB55-1C056323F29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F26DB9-C687-408B-BB55-1C056323F29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F26DB9-C687-408B-BB55-1C056323F29F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE5CB160-7469-489B-ADF1-9E943A1DB5D2}
+	EndGlobalSection
+EndGlobal
